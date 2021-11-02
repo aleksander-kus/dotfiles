@@ -16,4 +16,6 @@ lxsession &
 DAY=$(date "+%u")
 [ $DAY != "6" -a $DAY != "7" ] && teams &
 steam &
+/home/alex/bin/Awakened-PoE-Trade-2.9.1.AppImage &
+python /home/alex/dev/clienthelper.py &
 xsetroot -cursor_name left_ptr
