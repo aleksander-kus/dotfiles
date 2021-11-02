@@ -645,16 +645,16 @@ threeCol = renamed [Replace "threeCol"]
            $ limitWindows 7
            $ mySpacing' 4
            $ ThreeCol 1 (3/100) (1/2)
--- threeRow = renamed [Replace "threeRow"]
---            $ windowNavigation
---            $ addTabs shrinkText myTabTheme
---            $ subLayout [] (smartBorders Simplest)
---            $ limitWindows 7
---            $ mySpacing' 4
---            -- Mirror takes a layout and rotates it by 90 degrees.
---            -- So we are applying Mirror to the ThreeCol layout.
---            $ Mirror
---            $ ThreeCol 1 (3/100) (1/2)
+threeRow = renamed [Replace "threeRow"]
+           $ windowNavigation
+           $ addTabs shrinkText myTabTheme
+           $ subLayout [] (smartBorders Simplest)
+           $ limitWindows 7
+           $ mySpacing' 4
+           -- Mirror takes a layout and rotates it by 90 degrees.
+           -- So we are applying Mirror to the ThreeCol layout.
+           $ Mirror
+           $ ThreeCol 1 (3/100) (1/2)
 tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
@@ -691,7 +691,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| grid
                                  -- ||| spirals
                                  ||| threeCol
-                                 -- ||| threeRow
+                                 ||| threeRow
 
 myWorkspaces = [ " dev ", " www ", " var ", " sys ", " steam ", " game ", " mus ", " meet "]
 -- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
@@ -725,6 +725,7 @@ myManageHook = composeAll
      , title =? "Path of Exile"     --> doShift ( myWorkspaces !! 5 )
      , className =? "path of building.exe"      --> doShift ( myWorkspaces !! 2 )
      , className =? "Gimp"    --> doFloat
+     , className =? "Shutter"    --> doFloat
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
@@ -850,17 +851,17 @@ myKeys =
         , ("M-u <Space>", spawn "mocp --toggle-pause")
 
     -- Emacs (CTRL-e followed by a key)
-        , ("C-e e", spawn "emacsclient -c -a 'emacs'")                            -- start emacs
-        , ("C-e b", spawn "emacsclient -c -a 'emacs' --eval '(ibuffer)'")         -- list emacs buffers
-        , ("C-e d", spawn "emacsclient -c -a 'emacs' --eval '(dired nil)'")       -- dired emacs file manager
-        , ("C-e i", spawn "emacsclient -c -a 'emacs' --eval '(erc)'")             -- erc emacs irc client
-        , ("C-e m", spawn "emacsclient -c -a 'emacs' --eval '(mu4e)'")            -- mu4e emacs email client
-        , ("C-e n", spawn "emacsclient -c -a 'emacs' --eval '(elfeed)'")          -- elfeed emacs rss client
-        , ("C-e s", spawn "emacsclient -c -a 'emacs' --eval '(eshell)'")          -- eshell within emacs
-        , ("C-e t", spawn "emacsclient -c -a 'emacs' --eval '(mastodon)'")        -- mastodon within emacs
-        , ("C-e v", spawn "emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") -- vterm within emacs
-        -- emms is an emacs audio player. I set it to auto start playing in a specific directory.
-        , ("C-e a", spawn "emacsclient -c -a 'emacs' --eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'")
+        -- , ("C-e e", spawn "emacsclient -c -a 'emacs'")                            -- start emacs
+        -- , ("C-e b", spawn "emacsclient -c -a 'emacs' --eval '(ibuffer)'")         -- list emacs buffers
+        -- , ("C-e d", spawn "emacsclient -c -a 'emacs' --eval '(dired nil)'")       -- dired emacs file manager
+        -- , ("C-e i", spawn "emacsclient -c -a 'emacs' --eval '(erc)'")             -- erc emacs irc client
+        -- , ("C-e m", spawn "emacsclient -c -a 'emacs' --eval '(mu4e)'")            -- mu4e emacs email client
+        -- , ("C-e n", spawn "emacsclient -c -a 'emacs' --eval '(elfeed)'")          -- elfeed emacs rss client
+        -- , ("C-e s", spawn "emacsclient -c -a 'emacs' --eval '(eshell)'")          -- eshell within emacs
+        -- , ("C-e t", spawn "emacsclient -c -a 'emacs' --eval '(mastodon)'")        -- mastodon within emacs
+        -- , ("C-e v", spawn "emacsclient -c -a 'emacs' --eval '(+vterm/here nil)'") -- vterm within emacs
+        -- -- emms is an emacs audio player. I set it to auto start playing in a specific directory.
+        -- , ("C-e a", spawn "emacsclient -c -a 'emacs' --eval '(emms)' --eval '(emms-play-directory-tree \"~/Music/Non-Classical/70s-80s/\")'")
 
     -- Multimedia Keys
         , ("<XF86AudioPlay>", spawn (myTerminal ++ "mocp --play"))
@@ -879,10 +880,10 @@ myKeys =
     -- Appending search engine prompts to keybindings list.
     -- Look at "search engines" section of this config for values for "k".
         ++ [("M-s " ++ k, S.promptSearchBrowser dtXPConfig' "brave" f) | (k,f) <- searchList ]
-        ++ [("M-S-s " ++ k, S.selectSearch f) | (k,f) <- searchList ]
+    --    ++ [("M-S-s " ++ k, S.selectSearch f) | (k,f) <- searchList ]
     -- Appending some extra xprompts to keybindings list.
     -- Look at "xprompt settings" section this of config for values for "k".
-        ++ [("M-S-p " ++ k, f dtXPConfig') | (k,f) <- promptList ]
+        ++ [("M-S-s " ++ k, f dtXPConfig') | (k,f) <- promptList ]
     --  ++ [("M-S-p " ++ k, f dtXPConfig' g) | (k,f,g) <- promptList' ]
     -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
