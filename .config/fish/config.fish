@@ -346,6 +346,10 @@ alias rr 'curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 # Path of Building
 alias pob 'wine /home/alex/bin/PathOfBuildingCommunity-Setup-1.4.170.24/Path\ of\ Building.exe'
 
+# Drive mounting
+alias ma 'sudo mount -a'
+alias umd 'sudo umount /dev/sda1 /dev/sda2'
+
 # bare git repo alias for dotfiles
 alias config "/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias ca "config add"
