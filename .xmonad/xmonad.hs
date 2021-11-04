@@ -399,8 +399,13 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| threeCol
                                  ||| threeRow
 
-myWorkspaces = [ " dev ", " www ", " var ", " sys ", " steam ", " game ", " mus ", " meet "]
--- myWorkspaces = [" 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 "]
+myExtraWorkspaces = [("0", " meet ")] --,("-", "tmp"),("=", "swap")]
+myWorkspaces = [ " dev ", " www ", " var ", " file ", " sys ", " steam ", " game ", " mus ", " vlc "] ++ (map snd myExtraWorkspaces)
+-- Map workspaces with keys used to get to them, useful for custom keys defined in myExtraWorkspaces
+myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces (["1", "2", "3", "4", "5", "6", "7", "8", "9"] ++ (map fst myExtraWorkspaces)) -- (,) == \x y -> (x,y)
+
+clickable ws = "<action=xdotool key super+"++i++">"++ws++"</action>"
+    where i = fromJust $ M.lookup ws myWorkspaceIndices
 
 myStartupHook :: X ()
 myStartupHook = do
