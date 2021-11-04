@@ -411,7 +411,7 @@ myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "/home/alex/.xmonad/scripts/autostart.sh"
           spawnOn ( myWorkspaces !! 1 ) myBrowser
-          spawnOn ( myWorkspaces !! 3 ) myTerminal
+          spawnOn ( myWorkspaces !! 4 ) myTerminal
           spawnOn ( myWorkspaces !! 3 ) myFileManager
           -- spawnOnce "/usr/bin/emacs --daemon &"
 
@@ -426,21 +426,22 @@ myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
      -- I'm doing it this way because otherwise I would have to write out the full
      -- name of my workspaces, and the names would very long if using clickable workspaces.
-     [ className =? "Microsoft Teams - Preview"     --> doShift ( myWorkspaces !! 7 )
+     [ className =? "Microsoft Teams - Preview"     --> doShift ( myWorkspaces !! 9 )
      , title =? "Microsoft Teams Notification" --> doFloat
-     , className =? "zoom"     --> doShift ( myWorkspaces !! 7 )
-     , className =? "Steam"     --> doShift ( myWorkspaces !! 4 )
+     , className =? "zoom"     --> doShift ( myWorkspaces !! 9 )
+     , className =? "Steam"     --> doShift ( myWorkspaces !! 5 )
      , title =? "Steam - News"     --> doFloat
-     , className =? "steam_app_945360"     --> doShift ( myWorkspaces !! 5 )
-     , className =? "steam_app_435150"     --> doShift ( myWorkspaces !! 5 )
-     , title =? "Path of Exile"     --> doShift ( myWorkspaces !! 5 )
+     , className =? "steam_app_945360"     --> doShift ( myWorkspaces !! 6 )
+     , className =? "steam_app_435150"     --> doShift ( myWorkspaces !! 6 )
+     , title =? "Path of Exile"     --> doShift ( myWorkspaces !! 6 )
      , className =? "path of building.exe"      --> doShift ( myWorkspaces !! 2 )
+     , className =? "vlc"   --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
      , className =? "Shutter"    --> doFloat
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
      , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
-     , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 6 )
+     , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 7 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
      ] <+> namedScratchpadManageHook myScratchPads <+> manageSpawn
 
