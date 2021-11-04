@@ -1,0 +1,10 @@
+[user]
+	email = alex.qs234@gmail.com
+	name = Aleksander Kuś
+[pull]
+	rebase = false
+[core]
+	sshCommand = ssh -oHostKeyAlgorithms=+ssh-rsa
+	editor = code
+[includeif "gitdir:~/studia/"]
+	path = ~/.gitconfig.work
