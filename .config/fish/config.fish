@@ -408,6 +408,9 @@ alias gta "git tag -a"
 # accept autocompletion with Ctrl+F
 bind -M insert \cf forward-bigword
 
+# xclip
+alias xclip "xclip -selection clipboard"
+
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
 /opt/shell-color-scripts/colorscript.sh random
