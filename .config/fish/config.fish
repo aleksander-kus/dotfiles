@@ -240,8 +240,7 @@ end
 ### END OF FUNCTIONS ###
 
 ### SSH AGENT ###
-pgrep ssh-agent 1>/dev/null 2>&1
-if test ! $status -eq 0
+if test -z (pgrep ssh-agent)
   eval (ssh-agent -c)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
   set -Ux SSH_AGENT_PID $SSH_AGENT_PID
@@ -274,7 +273,7 @@ alias doompurge "~/.emacs.d/bin/doom purge"
 # Changing "ls" to "exa"
 alias ls 'exa --color=always --group-directories-first' # my preferred listing
 alias la 'exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll 'exa -al --color=always --group-directories-first'  # long format
+alias ll 'exa -alg --color=always --group-directories-first'  # long format
 alias lt 'exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
@@ -302,11 +301,11 @@ alias mv 'mv -i'
 alias rm 'rm -i'
 
 # defined functions above
-abbr -a bk backup
-abbr -a re restore
-abbr -a mc mkdir-cd
-abbr -a unzip clean-unzip
-abbr -a clu clean-unzip
+alias bk backup
+alias re restore
+alias mc mkdir-cd
+alias unzip clean-unzip
+alias clu clean-unzip
 
 # recompile and restart xmonad in terminal
 alias restart "xmonad --recompile && xmonad --restart"
@@ -408,6 +407,9 @@ alias gta "git tag -a"
 
 # accept autocompletion with Ctrl+F
 bind -M insert \cf forward-bigword
+
+# xclip
+alias xclip "xclip -selection clipboard"
 
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
