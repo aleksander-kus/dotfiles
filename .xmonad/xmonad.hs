@@ -90,7 +90,7 @@ myTerminal :: String
 myTerminal = "alacritty"   -- Sets default terminal
 
 myFileManager :: String
-myFileManager = "pcmanfm"   -- Sets default terminal
+myFileManager = "doublecmd"   -- Sets default terminal
 
 myBrowser :: String
 myBrowser = "brave "               -- Sets qutebrowser as browser for tree select
