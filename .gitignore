@@ -1,0 +1,2 @@
+# Ignore everything by default, add dotfiles with git add <filename>
+*
