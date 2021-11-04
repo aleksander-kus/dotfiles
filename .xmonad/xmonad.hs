@@ -639,24 +639,61 @@ myKeys =
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
                 nonEmptyNonNSP  = WSIs (return (\ws -> isJust (W.stack ws) && W.tag ws /= "nsp"))
 
+-- main :: IO ()
+-- main = do
+--     -- Launching three instances of xmobar on their monitors.
+--     xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/doom-one-xmobarrc"
+--     xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc"
+--     -- the xmonad, ya know...what the WM is named after!
+--     xmonad $ ewmh def
+--         { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
+--         -- Run xmonad commands from command line with "xmonadctl command". Commands include:
+--         -- shrink, expand, next-layout, default-layout, restart-wm, xterm, kill, refresh, run,
+--         -- focus-up, focus-down, swap-up, swap-down, swap-master, sink, quit-wm. You can run
+--         -- "xmonadctl 0" to generate full list of commands written to ~/.xsession-errors.
+--         -- To compile xmonadctl: ghc -dynamic xmonadctl.hs
+--         , handleEventHook    = serverModeEventHookCmd
+--                                <+> serverModeEventHook
+--                                <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
+--                                <+> docksEventHook
+--                                <+> setTransparentHook
+--         , modMask            = myModMask
+--         , terminal           = myTerminal
+--         , startupHook        = myStartupHook
+--         , layoutHook         = showWName' myShowWNameTheme $ myLayoutHook
+--         , workspaces         = myWorkspaces
+--         , borderWidth        = myBorderWidth
+--         , normalBorderColor  = myNormColor
+--         , focusedBorderColor = myFocusColor
+--         , logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP
+--                         { ppOutput = \x -> hPutStrLn xmproc0 x
+--                                         >> hPutStrLn xmproc1 x  -- >> hPutStrLn xmproc2 x
+--                         , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]" -- Current workspace in xmobar
+--                         , ppVisible = xmobarColor "#98be65" ""                -- Visible but not current workspace
+--                         , ppHidden = xmobarColor "#82AAFF" "" . wrap "" "*"   -- Hidden workspaces in xmobar
+--                         , ppHiddenNoWindows = xmobarColor "#c792ea" ""        -- Hidden workspaces (no windows)
+--                         , ppTitle = xmobarColor "#b3afc2" "" . shorten 60     -- Title of active window in xmobar
+--                         , ppSep =  "<fc=#666666> <fn=2>|</fn> </fc>"          -- Separators in xmobar
+--                         , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
+--                         , ppExtras  = [windowCount]                           -- # of windows current workspace
+--                         , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
+--                         }
+--         } `additionalKeysP` myKeys
 main :: IO ()
 main = do
     -- Launching three instances of xmobar on their monitors.
     xmproc0 <- spawnPipe "xmobar -x 0 $HOME/.config/xmobar/doom-one-xmobarrc"
     xmproc1 <- spawnPipe "xmobar -x 1 $HOME/.config/xmobar/xmobarrc"
+    --xmproc2 <- spawnPipe "xmobar -x 2 $HOME/.config/xmobar/xmobarrc"
     -- the xmonad, ya know...what the WM is named after!
     xmonad $ ewmh def
-        { manageHook = ( isFullscreen --> doFullFloat ) <+> myManageHook <+> manageDocks
-        -- Run xmonad commands from command line with "xmonadctl command". Commands include:
-        -- shrink, expand, next-layout, default-layout, restart-wm, xterm, kill, refresh, run,
-        -- focus-up, focus-down, swap-up, swap-down, swap-master, sink, quit-wm. You can run
-        -- "xmonadctl 0" to generate full list of commands written to ~/.xsession-errors.
-        -- To compile xmonadctl: ghc -dynamic xmonadctl.hs
-        , handleEventHook    = serverModeEventHookCmd
-                               <+> serverModeEventHook
-                               <+> serverModeEventHookF "XMONAD_PRINT" (io . putStrLn)
-                               <+> docksEventHook
-                               <+> setTransparentHook
+        { manageHook         = myManageHook <+> manageDocks
+        , handleEventHook    = docksEventHook
+                               -- Uncomment this line to enable fullscreen support on things like YouTube/Netflix.
+                               -- This works perfect on SINGLE monitor systems. On multi-monitor systems,
+                               -- it adds a border around the window if screen does not have focus. So, my solution
+                               -- is to use a keybinding to toggle fullscreen noborders instead.  (M-<Space>)
+                               -- <+> fullscreenEventHook
         , modMask            = myModMask
         , terminal           = myTerminal
         , startupHook        = myStartupHook
@@ -665,17 +702,19 @@ main = do
         , borderWidth        = myBorderWidth
         , normalBorderColor  = myNormColor
         , focusedBorderColor = myFocusColor
-        , logHook = workspaceHistoryHook <+> myLogHook <+> dynamicLogWithPP xmobarPP
-                        { ppOutput = \x -> hPutStrLn xmproc0 x
-                                        >> hPutStrLn xmproc1 x  -- >> hPutStrLn xmproc2 x
-                        , ppCurrent = xmobarColor "#98be65" "" . wrap "[" "]" -- Current workspace in xmobar
-                        , ppVisible = xmobarColor "#98be65" ""                -- Visible but not current workspace
-                        , ppHidden = xmobarColor "#82AAFF" "" . wrap "" "*"   -- Hidden workspaces in xmobar
-                        , ppHiddenNoWindows = xmobarColor "#c792ea" ""        -- Hidden workspaces (no windows)
-                        , ppTitle = xmobarColor "#b3afc2" "" . shorten 60     -- Title of active window in xmobar
-                        , ppSep =  "<fc=#666666> <fn=2>|</fn> </fc>"          -- Separators in xmobar
-                        , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"  -- Urgent workspace
-                        , ppExtras  = [windowCount]                           -- # of windows current workspace
-                        , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]
-                        }
+        , logHook = dynamicLogWithPP $ namedScratchpadFilterOutWorkspacePP $ xmobarPP
+              -- the following variables beginning with 'pp' are settings for xmobar.
+              { ppOutput = \x -> hPutStrLn xmproc0 x                          -- xmobar on monitor 1
+                              >> hPutStrLn xmproc1 x                          -- xmobar on monitor 2
+                              -- >> hPutStrLn xmproc2 x                          -- xmobar on monitor 3
+              , ppCurrent = xmobarColor "#c792ea" "" . wrap "<box type=Bottom width=2 mb=2 color=#c792ea>" "</box>"         -- Current workspace
+              , ppVisible = xmobarColor "#c792ea" "" . clickable              -- Visible but not current workspace
+              , ppHidden = xmobarColor "#82AAFF" "" . wrap "<box type=Top width=2 mt=2 color=#82AAFF>" "</box>" . clickable -- Hidden workspaces
+              , ppHiddenNoWindows = xmobarColor "#82AAFF" ""  . clickable     -- Hidden workspaces (no windows)
+              , ppTitle = xmobarColor "#b3afc2" "" . shorten 60               -- Title of active window
+              , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"                    -- Separator character
+              , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"            -- Urgent workspace
+              , ppExtras  = [windowCount]                                     -- # of windows current workspace
+              , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]                    -- order of things in xmobar
+              }
         } `additionalKeysP` myKeys
