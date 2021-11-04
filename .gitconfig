@@ -5,6 +5,6 @@
 	rebase = false
 [core]
 	sshCommand = ssh -oHostKeyAlgorithms=+ssh-rsa
-	editor = code
+	editor = code -w
 [includeif "gitdir:~/studia/"]
 	path = ~/.gitconfig.work
