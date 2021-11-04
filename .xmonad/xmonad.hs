@@ -631,6 +631,9 @@ myKeys =
     -- Appending some extra xprompts to keybindings list.
     -- Look at "xprompt settings" section this of config for values for "k".
         ++ [("M-S-s " ++ k, f dtXPConfig') | (k,f) <- promptList ]
+    -- For extra workspaces
+        ++ [(("M-" ++ key), (windows $ W.greedyView ws)) | (key,ws) <- myExtraWorkspaces]
+        ++ [(("M-S-" ++ key), (windows $ W.shift ws))| (key,ws) <- myExtraWorkspaces]
     --  ++ [("M-S-p " ++ k, f dtXPConfig' g) | (k,f,g) <- promptList' ]
     -- The following lines are needed for named scratchpads.
           where nonNSP          = WSIs (return (\ws -> W.tag ws /= "nsp"))
