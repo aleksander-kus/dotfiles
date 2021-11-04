@@ -301,11 +301,11 @@ alias mv 'mv -i'
 alias rm 'rm -i'
 
 # defined functions above
-abbr -a bk backup
-abbr -a re restore
-abbr -a mc mkdir-cd
-abbr -a unzip clean-unzip
-abbr -a clu clean-unzip
+alias bk backup
+alias re restore
+alias mc mkdir-cd
+alias unzip clean-unzip
+alias clu clean-unzip
 
 # recompile and restart xmonad in terminal
 alias restart "xmonad --recompile && xmonad --restart"
