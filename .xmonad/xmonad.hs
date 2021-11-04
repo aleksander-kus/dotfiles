@@ -443,6 +443,17 @@ myManageHook = composeAll
      , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
      , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 7 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+     , className =? "confirm"         --> doFloat
+     , className =? "file_progress"   --> doFloat
+     , className =? "dialog"          --> doFloat
+     , className =? "download"        --> doFloat
+     , className =? "error"           --> doFloat
+     , className =? "notification"    --> doFloat
+     , className =? "pinentry-gtk-2"  --> doFloat
+     , className =? "splash"          --> doFloat
+     , className =? "toolbar"         --> doFloat
+     --, className =? "Yad"             --> doCenterFloat
+     , isFullscreen -->  doFullFloat
      ] <+> namedScratchpadManageHook myScratchPads <+> manageSpawn
 
 myLogHook :: X ()
