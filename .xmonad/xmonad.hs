@@ -20,7 +20,7 @@ import qualified XMonad.Actions.Search as S
     -- Data
 import Data.Char (isSpace, toUpper)
 import Data.Monoid
-import Data.Maybe (isJust)
+import Data.Maybe (isJust, fromJust)
 import Data.Tree
 import Data.Word
 import qualified Data.Map as M
@@ -30,10 +30,11 @@ import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, s
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat)
+import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat, doCenterFloat)
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
+
 
     -- Layouts
 import XMonad.Layout.GridVariants (Grid(Grid))
