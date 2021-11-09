@@ -30,7 +30,7 @@ import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, s
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.FadeInactive
 import XMonad.Hooks.ManageDocks (avoidStruts, docksEventHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.ManageHelpers (isFullscreen, doFullFloat, doCenterFloat)
+import XMonad.Hooks.ManageHelpers --(isFullscreen, doFullFloat, doCenterFloat, doSink)
 import XMonad.Hooks.ServerMode
 import XMonad.Hooks.SetWMName
 import XMonad.Hooks.WorkspaceHistory
@@ -79,6 +79,7 @@ import XMonad.Util.Run
 import XMonad.Util.SpawnOnce
 import Graphics.X11.Xlib
 import Graphics.X11.Xlib.Extras
+import qualified XMonad.StackSet as StackSet
 
 myFont :: String
 myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=9:antialias=true:hinting=true"
@@ -421,6 +422,9 @@ xmobarEscape = concatMap doubleLts
         doubleLts '<' = "<<"
         doubleLts x   = [x]
 
+doSink :: ManageHook
+doSink = ask >>= doF . StackSet.sink
+
 myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
      -- using 'doShift ( myWorkspaces !! 7)' sends program to workspace 8!
@@ -433,6 +437,8 @@ myManageHook = composeAll
      , title =? "Steam - News"     --> doFloat
      , className =? "steam_app_945360"     --> doShift ( myWorkspaces !! 6 )
      , className =? "steam_app_435150"     --> doShift ( myWorkspaces !! 6 )
+     , className =? "steam_app_289070"     --> doShift ( myWorkspaces !! 6 )
+     , className =? "steam_app_289070"     --> doSink
      , title =? "Path of Exile"     --> doShift ( myWorkspaces !! 6 )
      , className =? "path of building.exe"      --> doShift ( myWorkspaces !! 2 )
      , className =? "vlc"   --> doShift ( myWorkspaces !! 8 )
@@ -443,6 +449,8 @@ myManageHook = composeAll
      , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
      , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 7 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
+     , className =? "Doublecmd"     --> doFloat
+     , title =? "Double Commander"     --> doSink
      , className =? "confirm"         --> doFloat
      , className =? "file_progress"   --> doFloat
      , className =? "dialog"          --> doFloat
