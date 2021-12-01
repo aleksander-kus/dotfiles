@@ -446,11 +446,10 @@ myManageHook = composeAll
      , className =? "Shutter"    --> doFloat
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
-     , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
      , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 7 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-     , className =? "Doublecmd"     --> doFloat
-     , title =? "Double Commander"     --> doSink
+     --, className =? "Doublecmd"     --> doFloat
+     --, title =? "Double Commander"     --> doSink
      , className =? "confirm"         --> doFloat
      , className =? "file_progress"   --> doFloat
      , className =? "dialog"          --> doFloat
