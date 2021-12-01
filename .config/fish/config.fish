@@ -172,6 +172,10 @@ end
 ### END OF FUNCTIONS ###
 
 ### SSH AGENT ###
+if test (pgrep ssh-agent | wc -l) -gt 1
+    killall ssh-agent
+end
+
 if test -z (pgrep ssh-agent)
   eval (ssh-agent -c)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
