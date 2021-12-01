@@ -324,44 +324,44 @@ tall     = renamed [Replace "tall"]
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (Simplest)
            $ limitWindows 12
-           $ mySpacing 8
+           $ mySpacing 4
            $ ResizableTall 1 (3/100) (1/2) []
 monocle  = renamed [Replace "monocle"]
            $ windowNavigation
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (Simplest)
            $ limitWindows 20 Full
-grid     = renamed [Replace "grid"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (Simplest)
-           $ limitWindows 12
-           $ mySpacing 8
-           $ mkToggle (single MIRROR)
-           $ Grid (16/10)
+-- grid     = renamed [Replace "grid"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (Simplest)
+--            $ limitWindows 12
+--            $ mySpacing 8
+--            $ mkToggle (single MIRROR)
+--            $ Grid (16/10)
 -- spirals  = renamed [Replace "spirals"]
 --            $ windowNavigation
 --            $ addTabs shrinkText myTabTheme
 --            $ subLayout [] (smartBorders Simplest)
 --            $ mySpacing' 8
 --            $ spiral (6/7)
-threeCol = renamed [Replace "threeCol"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (Simplest)
-           $ limitWindows 7
-           $ mySpacing' 4
-           $ ThreeCol 1 (3/100) (1/2)
-threeRow = renamed [Replace "threeRow"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (smartBorders Simplest)
-           $ limitWindows 7
-           $ mySpacing' 4
-           -- Mirror takes a layout and rotates it by 90 degrees.
-           -- So we are applying Mirror to the ThreeCol layout.
-           $ Mirror
-           $ ThreeCol 1 (3/100) (1/2)
+-- threeCol = renamed [Replace "threeCol"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (Simplest)
+--            $ limitWindows 7
+--            $ mySpacing' 4
+--            $ ThreeCol 1 (3/100) (1/2)
+-- threeRow = renamed [Replace "threeRow"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (smartBorders Simplest)
+--            $ limitWindows 7
+--            $ mySpacing' 4
+--            -- Mirror takes a layout and rotates it by 90 degrees.
+--            -- So we are applying Mirror to the ThreeCol layout.
+--            $ Mirror
+--            $ ThreeCol 1 (3/100) (1/2)
 tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
@@ -395,10 +395,10 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| noBorders monocle
                                  -- ||| floats
                                  ||| noBorders tabs
-                                 ||| grid
+                                 -- ||| grid
                                  -- ||| spirals
-                                 ||| threeCol
-                                 ||| threeRow
+                                 -- ||| threeCol
+                                 -- ||| threeRow
 
 myExtraWorkspaces = [("0", " meet ")] --,("-", "tmp"),("=", "swap")]
 myWorkspaces = [ " dev ", " www ", " var ", " file ", " sys ", " steam ", " game ", " mus ", " vlc "] ++ (map snd myExtraWorkspaces)
@@ -446,11 +446,10 @@ myManageHook = composeAll
      , className =? "Shutter"    --> doFloat
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
      , className =? "VirtualBox Manager" --> doShift  ( myWorkspaces !! 0 )
-     , className =? "jetbrains-pycharm" --> doShift  ( myWorkspaces !! 0 )
      , className =? "Pavucontrol" --> doShift  ( myWorkspaces !! 7 )
      , (className =? "firefox" <&&> resource =? "Dialog") --> doFloat  -- Float Firefox Dialog
-     , className =? "Doublecmd"     --> doFloat
-     , title =? "Double Commander"     --> doSink
+     --, className =? "Doublecmd"     --> doFloat
+     --, title =? "Double Commander"     --> doSink
      , className =? "confirm"         --> doFloat
      , className =? "file_progress"   --> doFloat
      , className =? "dialog"          --> doFloat
@@ -486,10 +485,10 @@ myKeys =
         , ("M-S-<Delete>", io exitSuccess)      -- Quits xmonad
 
     -- -- Run Prompt
-    --     , ("M-p", shellPrompt dtXPConfig) -- Shell Prompt
+        -- , ("M-p", shellPrompt dtXPConfig) -- Shell Prompt
 
         -- KB_GROUP Run Prompt
-         , ("M-r", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
+        , ("M-r", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
 
     -- KB_GROUP Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
@@ -498,7 +497,7 @@ myKeys =
         , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
         , ("M-p b", spawn "dm-setbg")     -- set a background
         , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
-        , ("M-p e", spawn "dm-confedit")  -- edit config files
+        , ("M-c", spawn "dm-confedit")  -- edit config files
         , ("M-p i", spawn "dm-maim")      -- screenshots (images)
         , ("M-p k", spawn "dm-kill")      -- kill processes
         , ("M-p m", spawn "dm-man")       -- manpages
@@ -515,7 +514,7 @@ myKeys =
     -- Useful programs to have a keybinding for launch
         , ("M-<Return>", spawn (myTerminal ++ " -e fish"))
         , ("M-b", spawn (myBrowser))
-        , ("M-c", spawn "qalculate-gtk")
+        --, ("M-c", spawn "qalculate-gtk")
         , ("M-S-t", spawn (myBrowser ++ " --new-window twitch.tv"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
         , ("M-e", spawn (myEditor))

@@ -6,6 +6,7 @@ set TERM "xterm-256color"              # Sets the terminal type
 setenv EDITOR vim
 setenv VISUAL vim
 set -U fish_color_command dfdfdf       # Set the default command color to white
+set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
@@ -171,6 +172,10 @@ end
 ### END OF FUNCTIONS ###
 
 ### SSH AGENT ###
+if test (pgrep ssh-agent | wc -l) -gt 1
+    killall ssh-agent
+end
+
 if test -z (pgrep ssh-agent)
   eval (ssh-agent -c)
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
@@ -210,6 +215,7 @@ alias installed-aur 'pacman -Qm'                 # list AUR packages
 alias exinstalled "expac -H M '%011m\t%-20n\t%10d' (comm -23 (pacman -Qqen | sort | psub) (pacman -Qqg base-devel xorg | sort | uniq | psub)) | sort -n"
 alias unlock 'sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup 'sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
+alias rmpkg 'yay -Rcns'
 
 # get fastest mirrors
 alias mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -293,10 +299,11 @@ alias gfnt "git fetch --no-tags"
 alias gfpp "git fetch --prune --prune-tags"
 alias gi "gitk"
 alias gia "gitk --all"
-alias gl "git log"
+alias gl "git log --oneline --graph --all -n20"
 alias glo "git log --oneline"
 alias glog "git log --oneline --graph"
 alias gloga "git log --oneline --graph --all"
+alias gln "git log --oneline --graph --all -n"
 alias gp "git push"
 alias gri "git rebase --interactive --rebase-merges"
 alias gs "git status"

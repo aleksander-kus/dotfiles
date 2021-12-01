@@ -1,6 +1,5 @@
 #!/bin/sh
 
-#xrandr -s 1920x1080 -r 144
 nitrogen --restore &
 picom &
 setxkbmap -option caps:escape
@@ -12,9 +11,10 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true --expa
 autokey-gtk &
 pavucontrol &
 dunst &
+udiskie --tray &
 lxsession &
-DAY=$(date "+%u")
-[ $DAY != "6" -a $DAY != "7" ] && teams &
+#DAY=$(date "+%u")
+#[ $DAY != "6" -a $DAY != "7" ] && teams &
 steam &
 /home/alex/bin/Awakened-PoE-Trade-2.9.1.AppImage &
 python /home/alex/dev/clienthelper.py &
