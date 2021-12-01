@@ -6,6 +6,7 @@ set TERM "xterm-256color"              # Sets the terminal type
 setenv EDITOR vim
 setenv VISUAL vim
 set -U fish_color_command dfdfdf       # Set the default command color to white
+set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
