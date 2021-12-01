@@ -331,37 +331,37 @@ monocle  = renamed [Replace "monocle"]
            $ addTabs shrinkText myTabTheme
            $ subLayout [] (Simplest)
            $ limitWindows 20 Full
-grid     = renamed [Replace "grid"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (Simplest)
-           $ limitWindows 12
-           $ mySpacing 8
-           $ mkToggle (single MIRROR)
-           $ Grid (16/10)
+-- grid     = renamed [Replace "grid"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (Simplest)
+--            $ limitWindows 12
+--            $ mySpacing 8
+--            $ mkToggle (single MIRROR)
+--            $ Grid (16/10)
 -- spirals  = renamed [Replace "spirals"]
 --            $ windowNavigation
 --            $ addTabs shrinkText myTabTheme
 --            $ subLayout [] (smartBorders Simplest)
 --            $ mySpacing' 8
 --            $ spiral (6/7)
-threeCol = renamed [Replace "threeCol"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (Simplest)
-           $ limitWindows 7
-           $ mySpacing' 4
-           $ ThreeCol 1 (3/100) (1/2)
-threeRow = renamed [Replace "threeRow"]
-           $ windowNavigation
-           $ addTabs shrinkText myTabTheme
-           $ subLayout [] (smartBorders Simplest)
-           $ limitWindows 7
-           $ mySpacing' 4
-           -- Mirror takes a layout and rotates it by 90 degrees.
-           -- So we are applying Mirror to the ThreeCol layout.
-           $ Mirror
-           $ ThreeCol 1 (3/100) (1/2)
+-- threeCol = renamed [Replace "threeCol"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (Simplest)
+--            $ limitWindows 7
+--            $ mySpacing' 4
+--            $ ThreeCol 1 (3/100) (1/2)
+-- threeRow = renamed [Replace "threeRow"]
+--            $ windowNavigation
+--            $ addTabs shrinkText myTabTheme
+--            $ subLayout [] (smartBorders Simplest)
+--            $ limitWindows 7
+--            $ mySpacing' 4
+--            -- Mirror takes a layout and rotates it by 90 degrees.
+--            -- So we are applying Mirror to the ThreeCol layout.
+--            $ Mirror
+--            $ ThreeCol 1 (3/100) (1/2)
 tabs     = renamed [Replace "tabs"]
            -- I cannot add spacing to this layout because it will
            -- add spacing between window and tabs which looks bad.
@@ -395,10 +395,10 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  ||| noBorders monocle
                                  -- ||| floats
                                  ||| noBorders tabs
-                                 ||| grid
+                                 -- ||| grid
                                  -- ||| spirals
-                                 ||| threeCol
-                                 ||| threeRow
+                                 -- ||| threeCol
+                                 -- ||| threeRow
 
 myExtraWorkspaces = [("0", " meet ")] --,("-", "tmp"),("=", "swap")]
 myWorkspaces = [ " dev ", " www ", " var ", " file ", " sys ", " steam ", " game ", " mus ", " vlc "] ++ (map snd myExtraWorkspaces)
