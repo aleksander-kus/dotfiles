@@ -485,10 +485,10 @@ myKeys =
         , ("M-S-<Delete>", io exitSuccess)      -- Quits xmonad
 
     -- -- Run Prompt
-    --     , ("M-p", shellPrompt dtXPConfig) -- Shell Prompt
+        -- , ("M-p", shellPrompt dtXPConfig) -- Shell Prompt
 
         -- KB_GROUP Run Prompt
-         , ("M-r", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
+        , ("M-r", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
 
     -- KB_GROUP Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
