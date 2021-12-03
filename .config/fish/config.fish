@@ -7,6 +7,7 @@ setenv EDITOR vim
 setenv VISUAL vim
 set -U fish_color_command dfdfdf       # Set the default command color to white
 set -x MANPAGER '/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
+set -x QT_QPA_PLATFORMTHEME "qt5ct"
 
 ### DEFAULT EMACS MODE OR VI MODE ###
 function fish_user_key_bindings
@@ -202,8 +203,7 @@ alias doompurge "~/.emacs.d/bin/doom purge"
 
 # Changing "ls" to "exa"
 alias ls 'exa --color=always --group-directories-first' # my preferred listing
-alias la 'exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll 'exa -alg --color=always --group-directories-first'  # long format
+alias ll 'exa -alg --color=always --group-directories-first --git'  # long format
 alias lt 'exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
@@ -321,6 +321,10 @@ alias cra "cd ~/studia/dotnet/CarRentalApp"
 alias cras "cd ~/studia/dotnet/CarRentalApiService"
 alias startsql "sudo systemctl start mssql-server"
 alias stopsql "sudo systemctl stop mssql-server"
+
+# kill brave before shutting down
+alias reboot "killall brave; /usr/bin/reboot"
+alias poweroff "killall brave; /usr/bin/poweroff"
 
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
