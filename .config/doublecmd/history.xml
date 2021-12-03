@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doublecmd>
+  <History>
+    <Navigation>
+      <Item>/home/alex/.local/share/Trash/files/</Item>
+      <Item>/home/alex/.local/share/Trash/</Item>
+      <Item>/home/alex/.local/share/</Item>
+      <Item>/home/alex/.local/</Item>
+      <Item>/home/alex/</Item>
+      <Item>/home/alex/.local/share/Steam/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/</Item>
+      <Item>/home/alex/Disk2/backup2/arch-ryszard/</Item>
+      <Item>/home/alex/Disk2/backup2/arch-ryszard/latest/</Item>
+      <Item>/home/alex/Disk2/backup2/arch-ryszard/2021-11-28.10-47-38/</Item>
+      <Item>/home/alex/Disk2/backup2/arch-ryszard/2021-11-28.10-47-38/home/</Item>
+      <Item>/home/alex/Disk2/backup2/arch-ryszard/2021-11-28.10-47-38/home/alex/</Item>
+      <Item>/home/alex/Disk2/backup2/</Item>
+      <Item>/home/alex/studia/dotnet/CarRentalApp/backend/CarRental/</Item>
+      <Item>/usr/share/icons/hicolor/16x16/actions/</Item>
+      <Item>/usr/share/icons/hicolor/16x16/</Item>
+      <Item>/usr/share/icons/hicolor/16x16/categories/</Item>
+      <Item>/usr/share/icons/hicolor/</Item>
+      <Item>/usr/share/icons/</Item>
+      <Item>/usr/share/icons/Sardi-Arc/</Item>
+      <Item>/usr/share/icons/Sardi-Arc/places/</Item>
+      <Item>/usr/share/icons/Sardi-Arc/places/16/</Item>
+      <Item>/home/alex/bin/./</Item>
+      <Item>/home/alex/studia/io1/</Item>
+      <Item>/home/alex/studia/io1/projekt/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/HonourMode/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/steamuser/Documents/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/steamuser/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/1493710/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/Program Files (x86)/</Item>
+      <Item>/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/openxr/</Item>
+      <Item>/home/alex/savesave/2021-11-26-15:32/HonourMode/</Item>
+      <Item>/home/alex/savesave/2021-11-26-15:32/</Item>
+      <Item>/home/alex/savesave/</Item>
+      <Item>/home/alex/savesave/2021-11-25-20:56/</Item>
+    </Navigation>
+    <CommandLine>
+      <Item>tar -xf Proton-6.20-GE.tar.gz</Item>
+      <Item>touch README.md</Item>
+    </CommandLine>
+    <FileMask>
+      <Item>*.*</Item>
+    </FileMask>
+    <SearchText/>
+    <SearchTextPath/>
+    <ReplaceText/>
+    <ReplaceTextPath/>
+    <CreateDirectories>
+      <Item>sop</Item>
+    </CreateDirectories>
+    <RenameNameMask/>
+    <RenameExtMask/>
+    <SearchDirectories/>
+    <SearchExcludeFiles/>
+    <SearchExcludeDirectories/>
+  </History>
+</doublecmd>
