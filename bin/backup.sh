@@ -21,7 +21,7 @@ then
 fi
 
 rsync-snapshot --dst $BACKUPDIR --maxSnapshots 100 \
---logFile /var/log/backup.log --exclude "/var/*" \
+--logFileLevel warn --logFile /var/log/backup.log --exclude "/var/*" \
 --exclude "/home/alex/Disk1/*" --exclude "/home/alex/Disk2/*" \
 --exclude "/home/alex/.config/BraveSoftware/*" --exclude "/home/alex/.mozilla/*" \
 --exclude "/home/alex/.local/share/libvirt/*" --exclude "/home/alex/.local/share/fsearch/*" \
