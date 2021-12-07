@@ -488,27 +488,27 @@ myKeys =
         -- , ("M-p", shellPrompt dtXPConfig) -- Shell Prompt
 
         -- KB_GROUP Run Prompt
-        , ("M-r", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
+        , ("M-p", spawn "dmenu_run -i -p \"Run: \"") -- Dmenu
 
     -- KB_GROUP Other Dmenu Prompts
     -- In Xmonad and many tiling window managers, M-p is the default keybinding to
     -- launch dmenu_run, so I've decided to use M-p plus KEY for these dmenu scripts.
-        , ("M-p h", spawn "dm-hub")       -- allows access to all dmscripts
-        , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
-        , ("M-p b", spawn "dm-setbg")     -- set a background
-        , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
-        , ("M-c", spawn "dm-confedit")  -- edit config files
-        , ("M-p i", spawn "dm-maim")      -- screenshots (images)
-        , ("M-p k", spawn "dm-kill")      -- kill processes
-        , ("M-p m", spawn "dm-man")       -- manpages
-        , ("M-p n", spawn "dm-note")      -- store one-line notes and copy them
-        , ("M-p o", spawn "dm-bookman")   -- qutebrowser bookmarks/history
-        , ("M-p p", spawn "passmenu")     -- passmenu
-        , ("M-p q", spawn "dm-logout")    -- logout menu
-        , ("M-p r", spawn "dm-reddit")    -- reddio (a reddit viewer)
-        , ("M-p s", spawn "dm-websearch") -- search various search engines
-        , ("M-p t", spawn "dm-translate") -- translate text (Google Translate)
-        , ("M-p w", spawn "dm-weather") -- weather
+        -- , ("M-p h", spawn "dm-hub")       -- allows access to all dmscripts
+        -- , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
+        -- , ("M-p b", spawn "dm-setbg")     -- set a background
+        -- , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
+        -- , ("M-c", spawn "dm-confedit")  -- edit config files
+        -- , ("M-p i", spawn "dm-maim")      -- screenshots (images)
+        -- , ("M-p k", spawn "dm-kill")      -- kill processes
+        -- , ("M-p m", spawn "dm-man")       -- manpages
+        -- , ("M-p n", spawn "dm-note")      -- store one-line notes and copy them
+        -- , ("M-p o", spawn "dm-bookman")   -- qutebrowser bookmarks/history
+        -- , ("M-p p", spawn "passmenu")     -- passmenu
+        -- , ("M-p q", spawn "dm-logout")    -- logout menu
+        -- , ("M-p r", spawn "dm-reddit")    -- reddio (a reddit viewer)
+        -- , ("M-p s", spawn "dm-websearch") -- search various search engines
+        -- , ("M-p t", spawn "dm-translate") -- translate text (Google Translate)
+        -- , ("M-p w", spawn "dm-weather") -- weather
 
 
     -- Useful programs to have a keybinding for launch
@@ -517,7 +517,7 @@ myKeys =
         --, ("M-c", spawn "qalculate-gtk")
         , ("M-S-t", spawn (myBrowser ++ " --new-window twitch.tv"))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
-        , ("M-e", spawn (myEditor))
+        -- , ("M-e", spawn (myEditor))
         , ("M-f", spawn (myFileManager))
         , ("M-M1-h", spawn (myTerminal ++ " -e htop"))
 
@@ -527,15 +527,15 @@ myKeys =
         , ("M-S-q", killAll)                       -- Kill all windows on current workspace
 
     -- Workspaces
-    --    , ("M-.", nextScreen)  -- Switch focus to next monitor
-    --    , ("M-,", prevScreen)  -- Switch focus to prev monitor
+        --, ("M-.", nextScreen)  -- Switch focus to next monitor
+        --, ("M-,", prevScreen)  -- Switch focus to prev monitor
         , ("M-S-<KP_Add>", shiftTo Next nonNSP >> moveTo Next nonNSP)       -- Shifts focused window to next ws
         , ("M-S-<KP_Subtract>", shiftTo Prev nonNSP >> moveTo Prev nonNSP)  -- Shifts focused window to prev ws
         , ("M--", toggleWS)
     -- Floating windows
         --, ("M-f", sendMessage (T.Toggle "floats")) -- Toggles my 'floats' layout
         , ("M-t", withFocused $ windows . W.sink)  -- Push floating window back to tile
-        --, ("M-S-t", sinkAll)                       -- Push ALL floating windows to tile
+        , ("M-S-t", sinkAll)                       -- Push ALL floating windows to tile
 
     -- Increase/decrease spacing (gaps)
         , ("M-d", decWindowSpacing 4)           -- Decrease window spacing

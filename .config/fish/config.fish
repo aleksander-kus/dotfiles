@@ -328,6 +328,6 @@ alias poweroff "killall brave; /usr/bin/poweroff"
 
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
-/opt/shell-color-scripts/colorscript.sh random
+colorscript -r
 
 starship init fish | source

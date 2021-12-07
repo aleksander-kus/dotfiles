@@ -1,0 +1,6 @@
+autokey-git
+brave-bin
+jetbrains-toolbox
+picom-jonaburg-git
+sardi-icons
+nerd-fonts-meslo

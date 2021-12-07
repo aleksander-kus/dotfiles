@@ -230,7 +230,18 @@
                   <Path Filename="home">/home/alex/Disk2/backup2/arch-ryszard/2021-11-28.10-47-38/</Path>
                   <Path Filename="latest">/home/alex/Disk2/backup2/arch-ryszard/</Path>
                   <Path Filename="..">/home/alex/Disk2/backup2/arch-ryszard/latest/</Path>
-                  <Path Filename="latest">/home/alex/Disk2/backup2/arch-ryszard/</Path>
+                  <Path Filename="..">/home/alex/Disk2/backup2/arch-ryszard/</Path>
+                  <Path Filename="..">/home/alex/Disk2/backup2/</Path>
+                  <Path Filename="backup2">/home/alex/Disk2/</Path>
+                  <Path Filename="..">/home/alex/Disk1/</Path>
+                  <Path Filename="Disk2">/home/alex/</Path>
+                  <Path Filename="backup">/home/alex/Disk2/</Path>
+                  <Path Filename="..">/home/alex/Disk2/backup/</Path>
+                  <Path Filename="backup">/home/alex/Disk2/</Path>
+                  <Path Filename="Disk1">/home/alex/</Path>
+                  <Path Filename="Tools">/home/alex/Disk1/</Path>
+                  <Path Filename="Linux">/home/alex/Disk1/Tools/</Path>
+                  <Path Filename="balenaEtcher-1.7.1-ia32.AppImage">/home/alex/Disk1/Tools/Linux/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -241,7 +252,7 @@
         </Tab>
       </Left>
       <Right>
-        <ActiveTab>4</ActiveTab>
+        <ActiveTab>1</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
@@ -254,7 +265,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="bin">/home/alex/</Path>
+                  <Path Filename="wallpapers">/home/alex/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -278,7 +289,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="..">/home/alex/Downloads/</Path>
+                  <Path Filename="balenaEtcher-1.7.1-ia32.AppImage">/home/alex/Downloads/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -340,76 +351,6 @@
           <FileView Type="columns">
             <Sortings>
               <Sorting>
-                <Direction>2</Direction>
-                <Function>7</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="HonourMode">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/HonourMode/</Path>
-                  <Path Filename="HonourMode">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/HonourMode/</Path>
-                  <Path Filename="Ładownia - 0h38m">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Path>
-                  <Path Filename="435150">/home/alex/.local/share/Steam/steamapps/compatdata/</Path>
-                  <Path Filename="pfx">/home/alex/.local/share/Steam/steamapps/compatdata/435150/</Path>
-                  <Path Filename="drive_c">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/</Path>
-                  <Path Filename="openxr">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/openxr/</Path>
-                  <Path Filename="Program Files (x86)">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/Program Files (x86)/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/</Path>
-                  <Path Filename="1493710">/home/alex/.local/share/Steam/steamapps/compatdata/</Path>
-                  <Path Filename="pfx">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/</Path>
-                  <Path Filename="drive_c">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/</Path>
-                  <Path Filename="users">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/</Path>
-                  <Path Filename="steamuser">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/</Path>
-                  <Path Filename="Documents">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/steamuser/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/1493710/pfx/drive_c/users/steamuser/Documents/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/</Path>
-                  <Path Filename="steamapps">/home/alex/.local/share/Steam/</Path>
-                  <Path Filename="compatdata">/home/alex/.local/share/Steam/steamapps/</Path>
-                  <Path Filename="435150">/home/alex/.local/share/Steam/steamapps/compatdata/</Path>
-                  <Path Filename="pfx">/home/alex/.local/share/Steam/steamapps/compatdata/435150/</Path>
-                  <Path Filename="drive_c">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/</Path>
-                  <Path Filename="users">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/</Path>
-                  <Path Filename="steamuser">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/</Path>
-                  <Path Filename="Documents">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/</Path>
-                  <Path Filename="Larian Studios">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/</Path>
-                  <Path Filename="Divinity Original Sin 2 Definitive Edition">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/</Path>
-                  <Path Filename="PlayerProfiles">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/</Path>
-                  <Path Filename="Shark">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/</Path>
-                  <Path Filename="Savegames">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/</Path>
-                  <Path Filename="Story">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/</Path>
-                  <Path Filename="HonourMode">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/HonourMode/</Path>
-                  <Path Filename="HonourMode">/home/alex/.local/share/Steam/steamapps/compatdata/435150/pfx/drive_c/users/steamuser/Documents/Larian Studios/Divinity Original Sin 2 Definitive Edition/PlayerProfiles/Shark/Savegames/Story/</Path>
-                  <Path Filename="..">/home/alex/.local/share/Steam/steamapps/compatdata/</Path>
-                  <Path Filename="compatdata">/home/alex/.local/share/Steam/steamapps/</Path>
-                  <Path Filename="steamapps">/home/alex/.local/share/Steam/</Path>
-                  <Path Filename="..">/home/alex/.local/share/</Path>
-                  <Path Filename="..">/home/alex/.local/</Path>
-                  <Path Filename=".local">/home/alex/</Path>
-                  <Path Filename="share">/home/alex/.local/</Path>
-                  <Path Filename="Trash">/home/alex/.local/share/</Path>
-                  <Path Filename="files">/home/alex/.local/share/Trash/</Path>
-                  <Path Filename="HonourMode_3847103501751">/home/alex/.local/share/Trash/files/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
                 <Direction>1</Direction>
                 <Function>12</Function>
               </Sorting>
@@ -423,7 +364,8 @@
                   <Path Filename="..">/home/alex/studia/io1/projekt/</Path>
                   <Path Filename="projekt">/home/alex/studia/io1/</Path>
                   <Path Filename="..">/home/alex/studia/io1/projekt/</Path>
-                  <Path Filename="projekt">/home/alex/studia/io1/</Path>
+                  <Path Filename="wyklady">/home/alex/studia/io1/</Path>
+                  <Path Filename="1a">/home/alex/studia/io1/wyklady/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -444,41 +386,8 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="studia">/home/alex/</Path>
-                  <Path Filename="..">/home/alex/backup/</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-        </Tab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="studia">/home/alex/</Path>
-                  <Path Filename="backup.sh">/home/alex/bin/</Path>
-                  <Path Filename="..">/home/alex/bin/./</Path>
-                  <Path Filename="..">/usr/share/icons/Sardi-Arc/places/16/</Path>
-                  <Path Filename="..">/usr/share/icons/Sardi-Arc/places/</Path>
-                  <Path Filename="..">/usr/share/icons/Sardi-Arc/</Path>
-                  <Path Filename="hicolor">/usr/share/icons/</Path>
-                  <Path Filename="16x16">/usr/share/icons/hicolor/</Path>
-                  <Path Filename="categories">/usr/share/icons/hicolor/16x16/</Path>
-                  <Path Filename="..">/usr/share/icons/hicolor/16x16/categories/</Path>
-                  <Path Filename="actions">/usr/share/icons/hicolor/16x16/</Path>
-                  <Path Filename="..">/usr/share/icons/hicolor/16x16/actions/</Path>
-                  <Path Filename="..">/home/alex/studia/dotnet/CarRentalApp/backend/CarRental/</Path>
+                  <Path Filename="bin">/home/alex/</Path>
+                  <Path Filename="background.png">/home/alex/wallpapers/</Path>
                 </Paths>
               </Entry>
             </History>
