@@ -497,7 +497,7 @@ myKeys =
         -- , ("M-p a", spawn "dm-sounds")    -- choose an ambient background
         -- , ("M-p b", spawn "dm-setbg")     -- set a background
         -- , ("M-p c", spawn "dm-colpick")   -- pick color from our scheme
-        -- , ("M-c", spawn "dm-confedit")  -- edit config files
+        , ("M-c", spawn "dm-confedit")  -- edit config files
         -- , ("M-p i", spawn "dm-maim")      -- screenshots (images)
         -- , ("M-p k", spawn "dm-kill")      -- kill processes
         -- , ("M-p m", spawn "dm-man")       -- manpages
