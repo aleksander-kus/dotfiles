@@ -412,7 +412,7 @@ myStartupHook :: X ()
 myStartupHook = do
           spawnOnce "/home/alex/.xmonad/scripts/autostart.sh"
           spawnOn ( myWorkspaces !! 1 ) myBrowser
-          spawnOn ( myWorkspaces !! 4 ) myTerminal
+          spawnOn ( myWorkspaces !! 4 ) "alacritty -e btop"
           spawnOn ( myWorkspaces !! 3 ) myFileManager
           -- spawnOnce "/usr/bin/emacs --daemon &"
 

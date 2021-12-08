@@ -97,7 +97,7 @@ function take --argument number
 end
 
 function mkdir-cd
-    mkdir $argv && cd $argv
+    mkdir -p $argv && cd $argv
 end
 
 function backup --argument filename
@@ -170,6 +170,53 @@ function remove
 
     rm $original_args
 end
+
+function extract --description "Expand or extract bundled & compressed files"
+    # no arguments, write usage
+    if test (count $argv) -eq 0
+        echo "Usage: extract [-option] [file ...] " >&2
+        exit 1
+    end
+    for i in $argv[1..-1]
+        if test ! -f $i
+            echo "extract: '$i' is not a valid file" >&2
+            continue
+        end
+        set success 0
+        set extension (string match -r ".*(\.[^\.]*)\$" $i)[2]
+        switch $extension
+            case '*.tar.gz' '*.tgz'
+                tar xv; or tar zxvf "$i"
+            case '*.tar.bz2' '*.tbz' '*.tbz2'
+                tar xvjf "$i"
+            case '*.tar.xz' '*.txz'
+                tar --xz -xvf "$i"; or xzcat "$i" | tar xvf -
+            case '*.tar.zma' '*.tlz'
+                tar --lzma -xvf "$i"; or lzcat "$i" | tar xvf -
+            case '*.tar'
+                tar xvf "$i"
+            case '*.gz'
+                gunzip -k "$i"
+            case '*.bz2'
+                bunzip2 "$i"
+            case '*.xz'
+                unxz "$i"
+            case '*.lzma'
+                unlzma "$i"
+            case '*.z'
+                uncompress "$i"
+            case '*.zip' '*.war' '*.jar' '*.sublime-package' '*.ipsw' '*.xpi' '*.apk' '*.aar' '*.whl'
+                clean-unzip "$i"
+            case '*.rar'
+                unrar x -ad "$i"
+            case '*.7z'
+                7za x "$i"
+            case '*'
+                echo "extract: '$i' cannot be extracted" >&2
+                set success 1
+        end
+    end
+end
 ### END OF FUNCTIONS ###
 
 ### SSH AGENT ###
@@ -183,7 +230,6 @@ if test -z (pgrep ssh-agent)
   set -Ux SSH_AGENT_PID $SSH_AGENT_PID
   set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
 end
-
 
 ### ALIASES ###
 # navigation
@@ -207,9 +253,8 @@ alias ll 'exa -alg --color=always --group-directories-first --git'  # long forma
 alias lt 'exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
-alias pacsyu 'sudo pacman -Syyu'                 # update only standard pkgs
-alias update-aur 'yay -Sua --noconfirm'          # update only AUR pkgs
 alias update 'yay -Syyu --noconfirm'             # update standard pkgs and AUR pkgs
+alias update-aur 'yay -Sua --noconfirm'          # update only AUR pkgs
 alias installed 'pacman -Qn'                     # list native packages
 alias installed-aur 'pacman -Qm'                 # list AUR packages
 alias exinstalled "expac -H M '%011m\t%-20n\t%10d' (comm -23 (pacman -Qqen | sort | psub) (pacman -Qqg base-devel xorg | sort | uniq | psub)) | sort -n"
@@ -219,9 +264,7 @@ alias rmpkg 'yay -Rcns'
 
 # get fastest mirrors
 alias mirror "sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord "sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
 alias mirrors "sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora "sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Colorize grep output (good for log files)
 alias grep 'grep --color=auto'
@@ -235,17 +278,15 @@ alias rm 'rm -i'
 alias bk backup
 alias re restore
 alias mkcd mkdir-cd
-alias unzip clean-unzip
-alias clu clean-unzip
+alias ex extract
 
 # recompile and restart xmonad in terminal
 alias restart "xmonad --recompile && xmonad --restart"
 
 # adding flags
 alias df 'df -h'                          # human-readable sizes
+alias du 'df -u'                          # human-readable sizes
 alias free 'free -m'                      # show sizes in MB
-alias lynx 'lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm './.config/vifm/scripts/vifmrun'
 
 ## get top process eating memory
 alias psmem 'ps aux | sort -nr -k 4'
@@ -254,9 +295,6 @@ alias psmem10 'ps aux | sort -nr -k 4 | head -10'
 ## get top process eating cpu ##
 alias pscpu 'ps aux | sort -nr -k 3'
 alias pscpu10 'ps aux | sort -nr -k 3 | head -10'
-
-# Merge Xresources
-alias merge 'xrdb -merge ~/.Xresources'
 
 # get error messages from journalctl
 alias jctl "journalctl -p 3 -xb"
@@ -278,7 +316,6 @@ alias pob 'wine /home/alex/bin/PathOfBuildingCommunity-Setup-1.4.170.24/Path\ of
 
 # Drive mounting
 alias ma 'sudo mount -a'
-alias umd 'sudo umount /dev/sda1 /dev/sda2'
 
 # git
 alias ga "git add"
@@ -289,6 +326,7 @@ alias gap "git add -p"
 alias gb "git branch"
 alias gbd "git branch -d"
 alias gc "git commit"
+alias gc "git commit --amend"
 alias gch "git checkout"
 alias gcb "git checkout -b"
 alias gchm "git checkout master"
@@ -315,6 +353,9 @@ bind -M insert \cf forward-bigword
 
 # xclip
 alias xclip "xclip -selection clipboard"
+
+# doublecommander
+alias dc "doublecmd \$PWD &> /dev/null"
 
 # quick folder access aliases
 alias cra "cd ~/studia/dotnet/CarRentalApp"
