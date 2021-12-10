@@ -17,6 +17,7 @@ export ALTERNATE_EDITOR=""                # setting for emacsclient
 #export EDITOR="emacsclient -t -a ''"      # $EDITOR use Emacs in terminal
 #export VISUAL="emacsclient -c -a emacs"   # $VISUAL use Emacs in GUI mode
 export EDITOR="code"
+export PATH=$PATH:/var/lib/snapd/snap/bin
 
 # sets vim as manpager
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""

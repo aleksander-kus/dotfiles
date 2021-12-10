@@ -1,4 +1,4 @@
-set -U fish_user_paths $fish_user_paths $HOME/.local/bin/
+set -U fish_user_paths $fish_user_paths $HOME/.local/bin/ /var/lib/snapd/snap/bin/
 set fish_greeting                      # Supresses fish's intro message
 set TERM "xterm-256color"              # Sets the terminal type
 #set EDITOR "emacsclient -t -a ''"      # $EDITOR use Emacs in terminal
@@ -366,6 +366,9 @@ alias stopsql "sudo systemctl stop mssql-server"
 # kill brave before shutting down
 alias reboot "killall brave; /usr/bin/reboot"
 alias poweroff "killall brave; /usr/bin/poweroff"
+
+# reload fish config
+alias reload "source ~/.config/fish/config.fish"
 
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
