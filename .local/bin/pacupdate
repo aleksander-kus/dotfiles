@@ -1,4 +1,16 @@
 #!/bin/bash
 
-cupd=$(checkupdates | wc -l)
-echo "$cupd updates "
+check() {
+    updates=$(cat check.txt | wc -l)
+    echo "$updates updates "
+}
+
+if [ -f check.txt ]
+then
+    check
+else
+    checkupdates > check.txt
+    check
+    sleep 5
+    rm check.txt
+fi
