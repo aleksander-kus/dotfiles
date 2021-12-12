@@ -100,11 +100,12 @@ alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 alias doompurge="~/.emacs.d/bin/doom purge"
 
 # pacman and yay
-alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
+alias pacsyu="sudo pacman -Syyu"                 # update only standard pkgs
 alias yaysua="yay -Sua --noconfirm"              # update only AUR pkgs
+alias update="yay -Syyu --noconfirm"
 alias yaysyu="yay -Syu --noconfirm"              # update standard pkgs and AUR pkgs
 alias unlock="sudo rm /var/lib/pacman/db.lck"    # remove pacman lock
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
+alias cleanup="sudo pacman -Rns $(pacman -Qtdq)" # remove orphaned packages
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
