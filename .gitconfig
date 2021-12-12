@@ -8,3 +8,5 @@
 	editor = code -w
 [includeif "gitdir:~/studia/"]
 	path = ~/.gitconfig.work
+[alias]
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
