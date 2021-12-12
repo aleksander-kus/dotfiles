@@ -125,9 +125,19 @@ myColorizer = colorRangeFromClassName
                   (0xc0,0xa7,0x9a) -- inactive fg
                   (0x28,0x2c,0x34) -- active fg
 
+-- | A green monochrome colorizer based on window class
+greenColorizer = colorRangeFromClassName
+                black            -- lowest inactive bg
+                (0x70,0xFF,0x70) -- highest inactive bg
+                black            -- active bg
+                white            -- inactive fg
+                white            -- active fg
+  where black = minBound
+        white = maxBound
+
 -- gridSelect menu layout
 mygridConfig :: p -> GSConfig Window
-mygridConfig colorizer = (buildDefaultGSConfig myColorizer)
+mygridConfig colorizer = (buildDefaultGSConfig greenColorizer)
     { gs_cellheight   = 40
     , gs_cellwidth    = 200
     , gs_cellpadding  = 6
