@@ -82,7 +82,7 @@ import Graphics.X11.Xlib.Extras
 import qualified XMonad.StackSet as StackSet
 
 myFont :: String
-myFont = "xft:SauceCodePro Nerd Font Mono:regular:size=9:antialias=true:hinting=true"
+myFont = "xft:MesloLGS Nerd Font Mono:size=9:antialias=true:hinting=true"
 
 myModMask :: KeyMask
 myModMask = mod4Mask       -- Sets modkey to super/windows key
