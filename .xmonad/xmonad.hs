@@ -411,7 +411,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange
                                  -- ||| threeRow
 
 myExtraWorkspaces = [("0", " meet ")] --,("-", "tmp"),("=", "swap")]
-myWorkspaces = [ " dev ", " www ", " var ", " file ", " sys ", " steam ", " game ", " mus ", " vlc "] ++ (map snd myExtraWorkspaces)
+myWorkspaces = [ " dev ", " www ", " var ", " file ", " sys ", " steam ", " game ", " mus ", " vid "] ++ (map snd myExtraWorkspaces)
 -- Map workspaces with keys used to get to them, useful for custom keys defined in myExtraWorkspaces
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces (["1", "2", "3", "4", "5", "6", "7", "8", "9"] ++ (map fst myExtraWorkspaces)) -- (,) == \x y -> (x,y)
 
@@ -453,7 +453,7 @@ myManageHook = composeAll
      , className =? "lor.exe"     --> doSink
      , title =? "Path of Exile"     --> doShift ( myWorkspaces !! 6 )
      , className =? "path of building.exe"      --> doShift ( myWorkspaces !! 2 )
-     , className =? "vlc"   --> doShift ( myWorkspaces !! 8 )
+     , className =? "io.github.celluloid_player.Celluloid"   --> doShift ( myWorkspaces !! 8 )
      , className =? "Gimp"    --> doFloat
      , className =? "Shutter"    --> doFloat
      , title =? "Oracle VM VirtualBox Manager"     --> doFloat
