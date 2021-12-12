@@ -335,7 +335,7 @@ alias gdc "git diff --cached"
 alias gf "git fetch"
 alias gfnt "git fetch --no-tags"
 alias gfpp "git fetch --prune --prune-tags"
-alias gi "gitk"
+alias gi "git ignored"  # requires alias in git config
 alias gia "gitk --all"
 alias gl "git log --oneline --graph --all -n20"
 alias glo "git log --oneline"
