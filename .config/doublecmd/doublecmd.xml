@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<doublecmd DCVersion="1.0.1 beta" ConfigVersion="12">
+<doublecmd DCVersion="1.0.2 beta" ConfigVersion="12">
   <Toolbars>
     <MainToolbar>
       <Row>
@@ -276,7 +276,9 @@
                   <Path Filename="40 Uninormy">/home/alex/studia/rozmyte/</Path>
                   <Path Filename="..">/home/alex/studia/rozmyte/40 Uninormy/</Path>
                   <Path Filename="40 Uninormy">/home/alex/studia/rozmyte/</Path>
-                  <Path Filename="[Deschrijver, Kerre 2003] Uninorms in L-fuzzy set theory.pdf">/home/alex/studia/rozmyte/40 Uninormy/</Path>
+                  <Path Filename="..">/home/alex/studia/rozmyte/40 Uninormy/</Path>
+                  <Path Filename="recordings">/home/alex/studia/rozmyte/</Path>
+                  <Path Filename="Spotkanie na kanale General-20211102_181853-Nagrywanie spotkania.mp4">/home/alex/studia/rozmyte/recordings/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -285,9 +287,6 @@
             </ColumnsView>
           </FileView>
         </Tab>
-      </Left>
-      <Right>
-        <ActiveTab>3</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <Sortings>
@@ -301,6 +300,32 @@
                 <FileSource Type="FileSystem"/>
                 <Paths>
                   <Path Filename="OneDrive_2021-12-10.zip">/home/alex/</Path>
+                  <Path Filename="bin">/home/alex/.local/</Path>
+                  <Path Filename="pacupdate">/home/alex/.local/bin/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
+      </Left>
+      <Right>
+        <ActiveTab>8</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename=".local">/home/alex/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -471,6 +496,29 @@
                 <Paths>
                   <Path Filename="io1">/home/alex/studia/</Path>
                   <Path Filename="..">/home/alex/studia/rozmyte/</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path Filename="OneDrive_2021-12-10.zip">/home/alex/</Path>
+                  <Path Filename="..">/home/alex/.local/</Path>
+                  <Path Filename=".pulse-cookie">/home/alex/</Path>
                 </Paths>
               </Entry>
             </History>
@@ -695,7 +743,7 @@
       <ShowFileSystem>True</ShowFileSystem>
       <ShowFreeSpace>True</ShowFreeSpace>
     </DrivesListButton>
-    <SeparateTree>False</SeparateTree>
+    <SeparateTree>True</SeparateTree>
     <DirectoryTabs>True</DirectoryTabs>
     <CurrentDirectory>True</CurrentDirectory>
     <TabHeader>True</TabHeader>
@@ -884,7 +932,7 @@
     <IgnoreListFile>%DC_CONFIG_PATH%/ignorelist.txt</IgnoreListFile>
   </IgnoreList>
   <DirectoryHotList>
-    <HotDir Name="rozmyte" Path="/home/alex/studia/rozmyte/"/>
+    <HotDir Name="rozmyte" Path="/home/alex/studia/rozmyte"/>
   </DirectoryHotList>
   <Viewer>
     <PreviewVisible>False</PreviewVisible>
