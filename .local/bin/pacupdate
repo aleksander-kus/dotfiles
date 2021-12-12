@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCKFILE="`basename $0`.lock"
+LOCKFILE="/home/alex/.local/bin/`basename $0`.lock"
 TIMEOUT=10
 
 touch $LOCKFILE       # update the timestamp of file, creating it if necessary
