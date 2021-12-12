@@ -1,16 +1,16 @@
 #!/bin/bash
 
-check() {
-    updates=$(cat check.txt | wc -l)
-    echo "$updates updates "
-}
+LOCKFILE="`basename $0`.lock"
+TIMEOUT=10
 
-if [ -f check.txt ]
-then
-    check
+touch $LOCKFILE       # update the timestamp of file, creating it if necessary
+exec {FD}<>$LOCKFILE  # create a file descriptor over the lockfile
+
+if ! flock -x -w $TIMEOUT $FD; then
+    # lock was not acquired within timeout
+    exit 1
 else
-    checkupdates > check.txt
-    check
-    sleep 5
-    rm check.txt
+    # lock was acquired
+    updates=$(checkupdates | wc -l)
+    echo "$updates updates "
 fi
