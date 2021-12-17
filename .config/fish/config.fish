@@ -249,6 +249,7 @@ alias doompurge "~/.emacs.d/bin/doom purge"
 
 # Changing "ls" to "exa"
 alias ls 'exa --color=always --group-directories-first' # my preferred listing
+alias l 'exa -alg --color=always --group-directories-first --git'  # long format
 alias ll 'exa -alg --color=always --group-directories-first --git'  # long format
 alias lt 'exa -aT --color=always --group-directories-first' # tree listing
 
