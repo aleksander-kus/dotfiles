@@ -199,7 +199,7 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 alias backup='sudo rsync -aAXHh --info=progress2 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home/alex/Disk1/*","/home/alex/Disk2/*"} / /home/alex/Disk2/backup'
 
 ### RANDOM COLOR SCRIPT ###
-/opt/shell-color-scripts/colorscript.sh random
+#/opt/shell-color-scripts/colorscript.sh random
 #source $HOME/.config/broot/launcher/bash/br
 
 eval "$(starship init bash)"
