@@ -254,6 +254,7 @@ alias ll 'exa -alg --color=always --group-directories-first --git'  # long forma
 alias lt 'exa -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
+alias up 'yay -Syyu --noconfirm'             # update standard pkgs and AUR pkgs
 alias update 'yay -Syyu --noconfirm'             # update standard pkgs and AUR pkgs
 alias update-aur 'yay -Sua --noconfirm'          # update only AUR pkgs
 alias installed 'pacman -Qn'                     # list native packages
@@ -286,7 +287,7 @@ alias restart "xmonad --recompile && xmonad --restart"
 
 # adding flags
 alias df 'df -h'                          # human-readable sizes
-alias du 'df -u'                          # human-readable sizes
+alias du 'du -h'                          # human-readable sizes
 alias free 'free -m'                      # show sizes in MB
 
 ## get top process eating memory
@@ -311,9 +312,6 @@ alias tobash "sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 
 # the terminal rickroll
 alias rr 'curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-
-# Path of Building
-alias pob 'wine /home/alex/bin/PathOfBuildingCommunity-Setup-1.4.170.24/Path\ of\ Building.exe'
 
 # Drive mounting
 alias ma 'sudo mount -a'
@@ -370,11 +368,15 @@ alias stopsql "sudo systemctl stop mssql-server"
 alias reboot "killall brave; /usr/bin/reboot"
 alias poweroff "killall brave; /usr/bin/poweroff"
 
+# radio
+alias melo "mpv \"https://n-16-8.dcs.redcdn.pl/sc/o2/Eurozet/live/meloradio.livx?audio=5?t=1646159496108\" --volume=30"
+alias zlote "mpv \"https://radiostream.pl/tuba8936-1.mp3?cache=1646171079\" --volume=30"
+
 # reload fish config
 alias reload "source ~/.config/fish/config.fish"
 
 ### RANDOM COLOR SCRIPT ###
 # Arch User Repository: shell-color-scripts
-colorscript -r
+fastfetch
 
 starship init fish | source
