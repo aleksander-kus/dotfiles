@@ -1,4 +1,4 @@
-set -U fish_user_paths $fish_user_paths $HOME/.local/bin/ /var/lib/snapd/snap/bin/
+set -U fish_user_paths $fish_user_paths $HOME/.local/bin/ $HOME/bin /var/lib/snapd/snap/bin/
 set fish_greeting                      # Supresses fish's intro message
 set TERM "xterm-256color"              # Sets the terminal type
 #set EDITOR "emacsclient -t -a ''"      # $EDITOR use Emacs in terminal
